@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    {% if user.is_authenticated %}
+        Hi {{ user.username }}!
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+        <a href="{% url 'owners' %}">view orders</a>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+    <title>GaikaShop</title>
+    <meta charset="utf-8" />
+    <img src="{% static "images/gaika.png" %}" alt="gaika" >
+    <a href="{% url 'buy' %}">create order</a>
+</head>
+<body>
+    <h2>Hello you on GaikaShop</h2>
+    <h1>Gaika 1</h1>
+    <p>10 kod</p>
+    <h1>Gaika 1</h1>
+    <p>11 kod</p>
+    <h1>Gaika 1</h1>
+    <p>12 kod</p>
+    <h1>Gaika 1</h1>
+    <p>13 kod</p>
+    <h1>Gaika 1</h1>
+    <p>14 kod</p>
+    <h1>Gaika 1</h1>
+    <p>15 kod</p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GaikaShop</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <a href="{% url 'mainp' %}">mainpage</a>
+    <a href="{% url 'buy' %}">create order</a>
+    {% if user.is_authenticated %}
+        <h2>all orders we have</h2>
+        {% for element in ord %}
+            <tr>
+                <td>{{ element.id }}</td>
+                <td>{{ element.name }}</td>
+                <td>{{ element.package }}</td>
+                <td>{{ element.telef }}</td>
+                <td>{{ element.addres }}</td>
+                <h2>                      </h2>
+            </tr>
+    {% empty %}
+        <li>empty</li>
+    {% endfor %}
+    {% else %}
+        <h2>you dont have acces</h2>
+    {% endif %}
+</body>
+</html>

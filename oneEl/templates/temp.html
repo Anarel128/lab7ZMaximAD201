@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parcer</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Send" >
+    {% for element in par %}
+        <tr>
+            <td>{{ element }}</td>
+            <h2>                      </h2>
+        </tr>
+    {% empty %}
+        <li>empty</li>
+    {% endfor %}
+</body>
+</html>
